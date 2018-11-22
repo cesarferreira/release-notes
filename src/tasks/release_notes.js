@@ -54,9 +54,11 @@ const self = module.exports = {
 			return;
 		}
 		const { from, to } = getFromTo(input);
+		var center = require('center-align');
 
-		log(Chalk.bgRed.white(`                      RELEASE NOTES                      \n`))
-
+		log(`\n`)
+		log(Chalk.bgRed.white(center(`RELEASE NOTES`,process.stdout.columns)))
+		// log(`\n`)
 		getData(input)
 			.then(data => {
 
